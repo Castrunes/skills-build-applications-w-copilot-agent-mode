@@ -38,21 +38,21 @@ class Command(BaseCommand):
 
         # Create activities
         activities = [
-            Activity(_id=ObjectId(), user=users[0], activity_type='Cycling', duration=int(timedelta(hours=1).total_seconds())),
-            Activity(_id=ObjectId(), user=users[1], activity_type='Crossfit', duration=int(timedelta(hours=2).total_seconds())),
-            Activity(_id=ObjectId(), user=users[2], activity_type='Running', duration=int(timedelta(hours=1, minutes=30).total_seconds())),
-            Activity(_id=ObjectId(), user=users[3], activity_type='Strength', duration=int(timedelta(minutes=30).total_seconds())),
-            Activity(_id=ObjectId(), user=users[4], activity_type='Swimming', duration=int(timedelta(hours=1, minutes=15).total_seconds())),
+            Activity(_id=ObjectId(), user=users[0].username, activity_type='Cycling', duration=int(timedelta(hours=1).total_seconds())),
+            Activity(_id=ObjectId(), user=users[1].username, activity_type='Crossfit', duration=int(timedelta(hours=2).total_seconds())),
+            Activity(_id=ObjectId(), user=users[2].username, activity_type='Running', duration=int(timedelta(hours=1, minutes=30).total_seconds())),
+            Activity(_id=ObjectId(), user=users[3].username, activity_type='Strength', duration=int(timedelta(minutes=30).total_seconds())),
+            Activity(_id=ObjectId(), user=users[4].username, activity_type='Swimming', duration=int(timedelta(hours=1, minutes=15).total_seconds())),
         ]
         Activity.objects.bulk_create(activities)
 
         # Create leaderboard entries
         leaderboard_entries = [
-            Leaderboard(_id=ObjectId(), user=users[0], score=100),
-            Leaderboard(_id=ObjectId(), user=users[1], score=90),
-            Leaderboard(_id=ObjectId(), user=users[2], score=95),
-            Leaderboard(_id=ObjectId(), user=users[3], score=85),
-            Leaderboard(_id=ObjectId(), user=users[4], score=80),
+            Leaderboard(_id=ObjectId(), user=users[0].username, score=100),
+            Leaderboard(_id=ObjectId(), user=users[1].username, score=90),
+            Leaderboard(_id=ObjectId(), user=users[2].username, score=95),
+            Leaderboard(_id=ObjectId(), user=users[3].username, score=85),
+            Leaderboard(_id=ObjectId(), user=users[4].username, score=80),
         ]
         Leaderboard.objects.bulk_create(leaderboard_entries)
 
